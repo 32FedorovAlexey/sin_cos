@@ -1,15 +1,16 @@
-module tb_sin_cos(output logic clk);
+module tb_sin_cos(output logic clk );
   
-  localparam WIDTH = 24;
+  localparam WIDTH = 21;
 
   logic reset;
-  logic [WIDTH-1:0] sin,cos;
+  logic [WIDTH-1:0] cos, sin;
   
-  sin_cos #(24) dut(.clk(clk),
-                    .reset(reset),
-                    .sin(sin),
-				        .cos(cos)
-				       );      
+  sin_cos #(WIDTH, 3) dut(
+                           .clk(clk),
+                           .reset(reset),
+                           .sin(sin),
+				               .cos(cos)
+				          );      
 
   
   initial begin
